@@ -43,6 +43,11 @@ public class BasePage {
 		findElement(locator).click();
 		testEnv.handleWaits().waitForPageLoad();
 	}
+
+	public void forceClick(String locator){
+		findElement(locator).dispatchEvent("click");
+		testEnv.handleWaits().waitForPageLoad();
+	}
 	
 	public boolean verifyElement(String locator) {
 		return page.isVisible(locator);
